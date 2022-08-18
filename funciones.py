@@ -13,15 +13,17 @@ import inspect
 import os
 import re
 
-# Lee los nombres de los pdfs a buscar y los guarda en una lista. Están almacenados en un txt, separados por /n
+# Lee los nombres de los pdfs a buscar y los guarda en una lista, formateándola.
 # Recibe: -
 # Devuelve: listaDePdfs
 def leerArchivo():
     informacion = open("listaDePdfs.txt", "r", encoding="latin1")
 
     listaDePdfs = []
-    for fila in informacion:
-       listaDePdfs.append((fila).strip())
+    for nombrePdf in informacion:
+        nombre = nombrePdf.strip() + (".pdf")
+        # listaDePdfs.append((nombre).strip())
+        listaDePdfs.append(nombre)
     
     print (listaDePdfs)
 
